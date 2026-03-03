@@ -22,60 +22,50 @@ st.markdown("""
         color: #e0e0e0;
     }
     
-    /* 2. ETIQUETAS (LABELS) VISIBLES Y GRANDES */
-    div[data-testid="stWidgetLabel"] p {
-        color: #B0C4DE !important; 
-        font-size: 1.2rem !important;
-        font-weight: 600 !important;
-        margin-bottom: 12px !important;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    /* 2. ETIQUETA DEL TEXT AREA (LA QUE SE VE MAL) */
+    /* Apuntamos específicamente a la etiqueta del área de texto */
+    .stTextArea label p {
+        color: #B0C4DE !important; /* Azul acero brillante */
+        font-size: 1.25rem !important; /* Más grande y legible */
+        font-weight: 700 !important;
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+        display: block !important;
     }
 
-    /* 3. ÁREA DE TEXTO (INPUT) */
+    /* 3. ÁREA DE ESCRITURA */
     .stTextArea textarea {
         background-color: #262730 !important;
         color: #ffffff !important;
         border: 2px solid #4A5E8C !important;
         border-radius: 12px !important;
         padding: 15px !important;
-    }
-    
-    .stTextArea textarea:focus {
-        border-color: #ff4b4b !important;
-        box-shadow: 0 0 10px rgba(255, 75, 75, 0.2) !important;
+        font-size: 1rem !important;
     }
 
-    /* 4. BOTONES DIFERENCIADOS POR TIPO */
-    /* Primario (ROJO) */
+    /* 4. BOTONES (MANTENIENDO TU ESTRUCTURA DE COLUMNAS) */
+    /* Estilo para Clasificar (Primary) */
     .stButton button[kind="primary"] {
         background-color: #ff4b4b !important;
         color: white !important;
         border: none !important;
         border-radius: 8px !important;
-        font-weight: bold !important;
-        width: 100% !important;
         height: 3.2em !important;
     }
 
-    /* Secundario (GRIS) */
+    /* Estilo para Borrar (Secondary) */
     .stButton button[kind="secondary"] {
         background-color: #4a4a4a !important;
         color: white !important;
         border: none !important;
         border-radius: 8px !important;
-        font-weight: bold !important;
-        width: 100% !important;
         height: 3.2em !important;
     }
 
-    /* Hovers */
-    .stButton button[kind="primary"]:hover {
-        background-color: #ff3333 !important;
-        transform: translateY(-1px);
-    }
-    .stButton button[kind="secondary"]:hover {
-        background-color: #666666 !important;
-        transform: translateY(-1px);
+    /* Ajuste para el st.caption de palabras detectadas */
+    .stCaption {
+        color: #8892b0 !important;
+        font-weight: 500 !important;
     }
     </style>
     """, unsafe_allow_html=True)
