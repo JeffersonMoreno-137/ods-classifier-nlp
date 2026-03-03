@@ -84,6 +84,24 @@ st.markdown("""
     button[kind="header"] {
         color: #e0e0e0 !important;
     }
+
+    /* 7. RESALTAR EL CUADRO DE RESULTADO (SUCCESS/INFO) */
+    div[data-testid="stNotification"] {
+        background-color: rgba(46, 204, 113, 0.15) !important; /* Fondo verde muy sutil */
+        border: 1px solid #2ecc71 !important; /* Borde verde esmeralda */
+        border-radius: 10px !important;
+    }
+
+    /* Forzar que el texto del resultado sea blanco puro y grande */
+    div[data-testid="stNotification"] p, 
+    div[data-testid="stNotification"] h1,
+    div[data-testid="stNotification"] h2,
+    div[data-testid="stNotification"] h3 {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 1.3rem !important;
+        text-shadow: 0px 0px 10px rgba(46, 204, 113, 0.5); /* Brillo tecnológico */
+    }
     
     </style>
     """, unsafe_allow_html=True)
