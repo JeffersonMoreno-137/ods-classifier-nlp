@@ -84,24 +84,30 @@ st.markdown("""
         color: #e0e0e0 !important;
     }
 
-  /* 7. RESALTAR EL CUADRO DE RESULTADO */
-    /* Caja contenedora */
+/* 7. RESALTAR EL CUADRO DE RESULTADO (BALANCEADO) */
     div[data-testid="stNotification"] {
-        background-color: rgba(46, 204, 113, 0.2) !important;
+        background-color: rgba(46, 204, 113, 0.1) !important;
         border: 1px solid #2ecc71 !important;
-        border-radius: 12px !important;
+        border-radius: 10px !important;
     }
 
-    /* FORZAR BLANCO EN TODOS LOS TEXTOS INTERNOS */
-    div[data-testid="stNotification"] p, 
-    div[data-testid="stNotification"] span, 
-    div[data-testid="stNotification"] li, 
-    div[data-testid="stNotification"] div,
-    .stAlert p {
+    /* Texto de introducción (más pequeño y blanco suave) */
+    div[data-testid="stNotification"] p {
+        color: #e0e0e0 !important; /* Blanco suave */
+        font-size: 1rem !important; /* Tamaño normal */
+        font-weight: 400 !important;
+        margin-bottom: 5px !important;
+    }
+
+    /* NOMBRE DEL ODS (El que debe resaltar) */
+    div[data-testid="stNotification"] h1, 
+    div[data-testid="stNotification"] h2, 
+    div[data-testid="stNotification"] h3,
+    div[data-testid="stNotification"] strong {
         color: #ffffff !important; /* Blanco puro */
-        font-size: 1.3rem !important;
-        font-weight: 700 !important;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
+        font-size: 1.4rem !important; /* Un poco más grande pero no gigante */
+        font-weight: 800 !important;
+        text-shadow: 0px 0px 10px rgba(46, 204, 113, 0.4) !important;
     }
     
     </style>
