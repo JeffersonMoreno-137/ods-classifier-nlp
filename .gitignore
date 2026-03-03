@@ -1,0 +1,33 @@
+# Entornos virtuales y configuraciones locales
+venv/
+env/
+.env
+.venv/
+.Python
+env.bak/
+venv.bak/
+
+# Caches y Scritps compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Archivos propios de Jupyter Notebooks
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# Archivos temporales de sistema operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# (Opcional) Puedes descomentar esto si el dataset original es muy pesado para GitHub
+# *.csv
+# *.xlsx
