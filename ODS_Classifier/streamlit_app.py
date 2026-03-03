@@ -117,7 +117,7 @@ ODS_NOMBRES = {
 # ==========================================
 # INTERFAZ DE USUARIO (UI)
 # ==========================================
-st.title("🌍 Clasificador Automático de ODS")
+st.header("🌍 CLASIFICADOR AUTOMÁTICO DE ODS")
 st.markdown("""
 <div style="text-align: justify;">
 ¡Bienvenid@! Esta herramienta utiliza inteligencia artificial para leer tus textos y detectar automáticamente con qué <a href="https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/" target="_blank">Objetivo de Desarrollo Sostenible (ODS) de la ONU</a> se relacionan. 
