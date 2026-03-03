@@ -22,39 +22,42 @@ st.markdown("""
         color: #e0e0e0;
     }
     
-    /* 2. ETIQUETAS (LABELS) VISIBLES */
+    /* 2. ETIQUETAS (LABELS) VISIBLES Y GRANDES */
     div[data-testid="stWidgetLabel"] p {
-        color: #B0C4DE !important; /* Azul acero claro */
-        font-size: 1.1rem !important;
+        color: #B0C4DE !important; 
+        font-size: 1.2rem !important;
         font-weight: 600 !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 12px !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
 
     /* 3. ÁREA DE TEXTO (INPUT) */
     .stTextArea textarea {
         background-color: #262730 !important;
         color: #ffffff !important;
-        border: 1px solid #4A5E8C !important;
-        border-radius: 8px !important;
+        border: 2px solid #4A5E8C !important;
+        border-radius: 12px !important;
+        padding: 15px !important;
     }
-    .stTextArea textarea::placeholder {
-        color: #6c757d !important;
-        opacity: 0.8;
+    
+    .stTextArea textarea:focus {
+        border-color: #ff4b4b !important;
+        box-shadow: 0 0 10px rgba(255, 75, 75, 0.2) !important;
     }
 
-    /* 4. BOTONES DIFERENCIADOS */
-    /* Estilo común */
-   .stButton button[kind="primary"] {
+    /* 4. BOTONES DIFERENCIADOS POR TIPO */
+    /* Primario (ROJO) */
+    .stButton button[kind="primary"] {
         background-color: #ff4b4b !important;
         color: white !important;
         border: none !important;
         border-radius: 8px !important;
         font-weight: bold !important;
         width: 100% !important;
-        height: 3em !important;
+        height: 3.2em !important;
     }
 
-    /* Estilo para el botón de BORRAR (Botón Secundario de Streamlit) */
+    /* Secundario (GRIS) */
     .stButton button[kind="secondary"] {
         background-color: #4a4a4a !important;
         color: white !important;
@@ -62,15 +65,17 @@ st.markdown("""
         border-radius: 8px !important;
         font-weight: bold !important;
         width: 100% !important;
-        height: 3em !important;
+        height: 3.2em !important;
     }
 
-    /* Efectos hover para que se sientan pro */
+    /* Hovers */
     .stButton button[kind="primary"]:hover {
         background-color: #ff3333 !important;
+        transform: translateY(-1px);
     }
     .stButton button[kind="secondary"]:hover {
         background-color: #666666 !important;
+        transform: translateY(-1px);
     }
     </style>
     """, unsafe_allow_html=True)
