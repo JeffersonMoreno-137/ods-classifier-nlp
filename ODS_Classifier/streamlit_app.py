@@ -16,56 +16,48 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-    /* 1. FONDO Y TEXTO GENERAL */
+    /* 1. FONDO GENERAL */
     .stApp {
         background-color: #1e2129;
         color: #e0e0e0;
     }
     
-    /* 2. ETIQUETA DEL TEXT AREA (LA QUE SE VE MAL) */
-    /* Apuntamos específicamente a la etiqueta del área de texto */
+    /* 2. TEXTO DE INSTRUCCIÓN (Fuera de negrita y con mejor color) */
     .stTextArea label p {
-        color: #B0C4DE !important; /* Azul acero brillante */
-        font-size: 1.25rem !important; /* Más grande y legible */
-        font-weight: 700 !important;
-        line-height: 1.4 !important;
-        margin-bottom: 15px !important;
-        display: block !important;
+        color: #B0C4DE !important; /* Azul acero claro */
+        font-size: 1.1rem !important;
+        font-weight: 400 !important; /* Quitamos la negrita pesada */
+        line-height: 1.5 !important;
+        margin-bottom: 10px !important;
     }
 
-    /* 3. ÁREA DE ESCRITURA */
+    /* 3. CAJA DE TEXTO Y PLACEHOLDER */
     .stTextArea textarea {
         background-color: #262730 !important;
-        color: #ffffff !important;
-        border: 2px solid #4A5E8C !important;
-        border-radius: 12px !important;
-        padding: 15px !important;
-        font-size: 1rem !important;
+        color: #ffffff !important; /* Texto que escribe el usuario */
+        border: 1px solid #4A5E8C !important;
+        border-radius: 10px !important;
     }
 
-    /* 4. BOTONES (MANTENIENDO TU ESTRUCTURA DE COLUMNAS) */
-    /* Estilo para Clasificar (Primary) */
+    /* ESTO ARREGLA EL TEXTO QUE NO SE LEE (Placeholder) */
+    .stTextArea textarea::placeholder {
+        color: #a0aec0 !important; /* Gris claro para que sea legible */
+        opacity: 1 !important; /* Quitamos la transparencia por defecto */
+    }
+
+    /* 4. BOTONES (Consolidado) */
     .stButton button[kind="primary"] {
         background-color: #ff4b4b !important;
         color: white !important;
-        border: none !important;
         border-radius: 8px !important;
-        height: 3.2em !important;
+        font-weight: 600 !important;
     }
 
-    /* Estilo para Borrar (Secondary) */
     .stButton button[kind="secondary"] {
         background-color: #4a4a4a !important;
         color: white !important;
-        border: none !important;
         border-radius: 8px !important;
-        height: 3.2em !important;
-    }
-
-    /* Ajuste para el st.caption de palabras detectadas */
-    .stCaption {
-        color: #8892b0 !important;
-        font-weight: 500 !important;
+        font-weight: 600 !important;
     }
     </style>
     """, unsafe_allow_html=True)
