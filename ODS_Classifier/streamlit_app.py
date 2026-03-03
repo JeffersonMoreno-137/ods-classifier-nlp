@@ -44,28 +44,32 @@ st.markdown("""
 
     /* 4. BOTONES DIFERENCIADOS */
     /* Estilo común */
-   .stButton > button {
-        border-radius: 8px !important;
-        border: none !important;
+   .stButton button[kind="primary"] {
+        background-color: #ff4b4b !important;
         color: white !important;
+        border: none !important;
+        border-radius: 8px !important;
         font-weight: bold !important;
-        height: 3em !important;
         width: 100% !important;
+        height: 3em !important;
     }
 
-    /* Columna 1: Botón Rojo (Clasificar) */
-    [data-testid="column"]:nth-of-type(1) .stButton > button {
-        background-color: #ff4b4b !important;
+    /* Estilo para el botón de BORRAR (Botón Secundario de Streamlit) */
+    .stButton button[kind="secondary"] {
+        background-color: #4a4a4a !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 8px !important;
+        font-weight: bold !important;
+        width: 100% !important;
+        height: 3em !important;
     }
-    [data-testid="column"]:nth-of-type(1) .stButton > button:hover {
+
+    /* Efectos hover para que se sientan pro */
+    .stButton button[kind="primary"]:hover {
         background-color: #ff3333 !important;
     }
-
-    /* Columna 2: Botón Gris (Borrar) */
-    [data-testid="column"]:nth-of-type(2) .stButton > button {
-        background-color: #4a4a4a !important;
-    }
-    [data-testid="column"]:nth-of-type(2) .stButton > button:hover {
+    .stButton button[kind="secondary"]:hover {
         background-color: #666666 !important;
     }
     </style>
