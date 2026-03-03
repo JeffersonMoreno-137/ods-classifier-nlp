@@ -202,8 +202,11 @@ user_input = st.text_area(
     "Escribe o pega aquí el documento, reporte o resumen que desees evaluar:", 
     height=200,
     key="texto_input",
-    placeholder="Ejemplo: Se busca mejorar el acceso al agua potable y construir sistemas de saneamiento adecuados en comunidades rurales..."
+    placeholder="Ejemplo: Se busca mejorar el acceso al agua potable..."
 )
+
+if user_input:
+    st.caption(f"Palabras detectadas: {len(user_input.split())} | Caracteres: {len(user_input)}")
 
 col1, col2, col3 = st.columns([1.5, 1.5, 2])
 with col1:
