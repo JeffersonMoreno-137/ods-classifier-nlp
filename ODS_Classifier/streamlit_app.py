@@ -240,6 +240,7 @@ def clear_text():
 user_input = st.text_area(
     "Escribe o pega aquí el documento, reporte o resumen que desees evaluar:", 
     height=250,
+    key="texto_input", # <--- ESTA LLAVE ES LA CLAVE
     placeholder="Ejemplo: Se busca mejorar el acceso al agua potable..."
 )
 
