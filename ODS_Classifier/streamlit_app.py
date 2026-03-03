@@ -2,6 +2,7 @@ import streamlit as st
 import joblib
 import spacy
 from nltk.corpus import stopwords
+import os
 
 # ==========================================
 # CONFIGURACIÓN DE LA PÁGINA
