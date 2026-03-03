@@ -84,26 +84,24 @@ st.markdown("""
         color: #e0e0e0 !important;
     }
 
-   /* 7. RESALTAR EL CUADRO DE RESULTADO */
+  /* 7. RESALTAR EL CUADRO DE RESULTADO */
+    /* Caja contenedora */
     div[data-testid="stNotification"] {
-        background-color: rgba(46, 204, 113, 0.2) !important; /* Fondo verde sutil */
-        border: 1px solid #2ecc71 !important; /* Borde esmeralda */
-        border-radius: 10px !important;
+        background-color: rgba(46, 204, 113, 0.2) !important;
+        border: 1px solid #2ecc71 !important;
+        border-radius: 12px !important;
     }
 
-    /* FORZAR TEXTO BLANCO Y GRANDE */
+    /* FORZAR BLANCO EN TODOS LOS TEXTOS INTERNOS */
     div[data-testid="stNotification"] p, 
-    div[data-testid="stNotification"] h1,
-    div[data-testid="stNotification"] h2,
-    div[data-testid="stNotification"] h3 {
-        color: #ffffff !important; /* Blanco puro para legibilidad total */
+    div[data-testid="stNotification"] span, 
+    div[data-testid="stNotification"] li, 
+    div[data-testid="stNotification"] div,
+    .stAlert p {
+        color: #ffffff !important; /* Blanco puro */
+        font-size: 1.3rem !important;
         font-weight: 700 !important;
-        font-size: 1.4rem !important;
-        text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3) !important;
-    }
-
-    .stMarkdown div p {
-    color: inherit;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
     }
     
     </style>
