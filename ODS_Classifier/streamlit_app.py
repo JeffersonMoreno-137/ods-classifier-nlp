@@ -22,7 +22,7 @@ st.markdown("""
         color: #e0e0e0;
     }
     
-    /* 2. TEXTO DE INSTRUCCIÓN (Fuera de negrita y con mejor color) */
+    /* 2. TEXTO DE INSTRUCCIÓN */
     .stTextArea label p {
         color: #B0C4DE !important; /* Azul acero claro */
         font-size: 1.1rem !important;
@@ -38,8 +38,7 @@ st.markdown("""
         border: 1px solid #4A5E8C !important;
         border-radius: 10px !important;
     }
-
-    /* ESTO ARREGLA EL TEXTO QUE NO SE LEE (Placeholder) */
+    
     .stTextArea textarea::placeholder {
         color: #a0aec0 !important; /* Gris claro para que sea legible */
         opacity: 1 !important; /* Quitamos la transparencia por defecto */
@@ -80,27 +79,31 @@ st.markdown("""
         display: none !important;
     }
 
-    /* Opcional: Hacer que el menú de hamburguesa y botones de GitHub sean claros para que no se pierdan */
+    /* Hacer que el menú de hamburguesa y botones de GitHub sean claros para que no se pierdan */
     button[kind="header"] {
         color: #e0e0e0 !important;
     }
 
-    /* 7. RESALTAR EL CUADRO DE RESULTADO (SUCCESS/INFO) */
+   /* 7. RESALTAR EL CUADRO DE RESULTADO */
     div[data-testid="stNotification"] {
-        background-color: rgba(46, 204, 113, 0.15) !important; /* Fondo verde muy sutil */
-        border: 1px solid #2ecc71 !important; /* Borde verde esmeralda */
+        background-color: rgba(46, 204, 113, 0.2) !important; /* Fondo verde sutil */
+        border: 1px solid #2ecc71 !important; /* Borde esmeralda */
         border-radius: 10px !important;
     }
 
-    /* Forzar que el texto del resultado sea blanco puro y grande */
+    /* FORZAR TEXTO BLANCO Y GRANDE */
     div[data-testid="stNotification"] p, 
     div[data-testid="stNotification"] h1,
     div[data-testid="stNotification"] h2,
     div[data-testid="stNotification"] h3 {
-        color: #ffffff !important;
+        color: #ffffff !important; /* Blanco puro para legibilidad total */
         font-weight: 700 !important;
-        font-size: 1.3rem !important;
-        text-shadow: 0px 0px 10px rgba(46, 204, 113, 0.5); /* Brillo tecnológico */
+        font-size: 1.4rem !important;
+        text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .stMarkdown div p {
+    color: inherit;
     }
     
     </style>
