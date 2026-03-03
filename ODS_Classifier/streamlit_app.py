@@ -40,20 +40,16 @@ st.markdown("""
 
 @st.cache_resource
 def load_nlp_resources():
-    try:
-        nlp = spacy.load("es_core_news_sm")
-    except OSError:
-        import os
-        os.system("python -m spacy download es_core_news_sm")
-        nlp = spacy.load("es_core_news_sm")
+    # Ya no descargamos manualmente, solo cargamos lo que pip instaló
+    nlp = spacy.load("es_core_news_sm")
     
     try:
         import nltk
-        nltk.data.find('corpora/stopwords')
-    except LookupError:
-        import nltk
         nltk.download('stopwords')
+    except:
+        pass
         
+    from nltk.corpus import stopwords
     stop_words = set(stopwords.words('spanish'))
     return nlp, stop_words
 
