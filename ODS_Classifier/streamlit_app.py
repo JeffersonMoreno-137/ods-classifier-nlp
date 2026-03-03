@@ -250,7 +250,7 @@ col1, col2, col3 = st.columns([1.5, 1.5, 2])
 with col1:
     predict_button = st.button("Clasificar 🚀 ", type="primary", use_container_width=True)
 with col2:
-    clear_button = st.button("Borrar Texto 🗑️", on_click=clear_text, use_container_width=True)
+   st.button("Borrar Texto 🗑️", on_click=clear_text, type="secondary", use_container_width=True)
 
 # Lógica de Inferencia
 if predict_button:
