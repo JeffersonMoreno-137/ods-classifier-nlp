@@ -13,6 +13,44 @@ st.set_page_config(
     layout="centered"
 )
 
+
+st.markdown("""
+    <style>
+    /* Fondo principal de la app */
+    .stApp {
+        background-color: #1e2129;
+        color: #e0e0e0;
+    }
+    
+    /* Fondo de la barra lateral (si usas) */
+    [data-testid="stSidebar"] {
+        background-color: #16191f;
+    }
+    
+    /* Estilo para las cajas de texto y inputs */
+    .stTextArea textarea, .stTextInput input {
+        background-color: #2b303b !important;
+        color: #ffffff !important;
+        border: 1px solid #3e4451 !important;
+    }
+    
+    /* Estilo para el botón */
+    .stButton>button {
+        background-color: #4a5e8c;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        transition: 0.3s;
+    }
+    
+    .stButton>button:hover {
+        background-color: #637ab0;
+        border: none;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+
 # Estilo para forzar que los botones midan exactamente lo mismo sin importar el emoji
 st.markdown("""
     <style>
