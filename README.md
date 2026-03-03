@@ -7,6 +7,8 @@ Este proyecto implementa una solución de Machine Learning y Procesamiento de Le
 * **Random Forest Classifier:** Modelo multiclase optimizado exhaustivamente con GridSearchCV para maximizar el F1-Score macro debido al desbalanceo de clases natural en estos textos.
 * **Interfaz de Usuario (UI):** Aplicativo web fácil de usar desarrollado en Streamlit que carga el modelo `.joblib` consolidado y permite predicciones en tiempo real.
 
+* **Link de la app en Streamlit:** https://uniandes-maia-ods-classifier-nlp-mp-67.streamlit.app/
+
 ## 📂 Estructura del repositorio
 
 ```text
