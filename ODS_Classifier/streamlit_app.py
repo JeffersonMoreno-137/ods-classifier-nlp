@@ -38,24 +38,26 @@ st.markdown("""
 # funciones personalizadas en su interior (__main__.pipeline_limpieza), 
 # se deben definir estas funciones exactas antes de cargar el modelo.
 
+# ==========================================
+# RECURSOS NLP Y FUNCIONES DE SOPORTE
+# ==========================================
 @st.cache_resource
 def load_nlp_resources():
-    # Ya no descargamos manualmente, solo cargamos lo que pip instaló
-    nlp = spacy.load("es_core_news_sm")
-    
+    # Carga el modelo que instalamos vía requirements.txt
+    nlp_model = spacy.load("es_core_news_sm")
     try:
         import nltk
-        nltk.download('stopwords')
+        nltk.download('stopwords', quiet=True)
+        from nltk.corpus import stopwords
+        stops = set(stopwords.words('spanish'))
     except:
-        pass
-        
-    from nltk.corpus import stopwords
-    stop_words = set(stopwords.words('spanish'))
-    return nlp, stop_words
+        stops = set()
+    return nlp_model, stops
 
-# Cargar recursos NLP (variables globales requeridas por las funciones)
+# Instanciamos los recursos una sola vez
 nlp, stop_words = load_nlp_resources()
 
+# Estas funciones DEBEN estar definidas antes de cargar el modelo .joblib
 def limpieza_textos(text):
     if not isinstance(text, str) or not text.strip():
         return ""
@@ -71,24 +73,24 @@ def limpieza_textos(text):
 def pipeline_limpieza(textos):
     return [limpieza_textos(t) for t in textos]
 
-
 # ==========================================
-# CACHING DEL MODELO
+# CARGA DEL MODELO (CON RUTA DINÁMICA)
 # ==========================================
 @st.cache_resource
 def load_ml_model():
-    model_path = "modelo_final_ods.joblib"
+    # Detecta la carpeta donde está este script
+    base_path = os.path.dirname(__file__)
+    model_path = os.path.join(base_path, "modelo_final_ods.joblib")
+    
     try:
-        model = joblib.load(model_path)
-        return model
+        # joblib buscará automáticamente 'pipeline_limpieza' en este mismo archivo
+        return joblib.load(model_path)
     except FileNotFoundError:
-        st.error(f"Error: No se encontró el modelo en la ruta {model_path}.")
+        st.error(f"Error: No se encontró el modelo en {model_path}")
         return None
 
-# Cargar el pipeline que internamente llamará a pipeline_limpieza
-with st.spinner("Cargando pipeline completo de Machine Learning (NLP integrado)..."):
+with st.spinner("Inicializando inteligencia artificial..."):
     model = load_ml_model()
-
 # ==========================================
 # DICCIONARIO ODS
 # ==========================================
