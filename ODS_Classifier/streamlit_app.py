@@ -59,6 +59,15 @@ st.markdown("""
         border-radius: 8px !important;
         font-weight: 600 !important;
     }
+
+    /* 5. DIVISORES VISIBLES (HR) */
+    hr {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+        border: 0 !important;
+        border-top: 1px solid #4A5E8C !important; /* Usamos el mismo azul acero */
+        opacity: 0.6 !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 
