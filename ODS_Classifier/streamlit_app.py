@@ -44,7 +44,7 @@ st.markdown("""
 
     /* 4. BOTONES DIFERENCIADOS */
     /* Estilo común */
-    .stButton>button {
+   .stButton>button {
         border-radius: 8px;
         border: none;
         padding: 0.5rem 1rem;
@@ -52,22 +52,27 @@ st.markdown("""
         transition: all 0.3s ease;
         width: 100%;
         font-weight: bold;
+        height: 3em; /* Asegura altura consistente */
     }
 
-    /* BOTÓN IZQUIERDO: ROJO (Clasificar) */
-    div[data-testid="column"]:nth-of-type(1) .stButton>button {
+    /* BUSCAR BOTÓN POR TEXTO: Clasificar */
+    .stButton button:has(div:contains("Clasificar")) {
         background-color: #ff4b4b !important;
     }
-    div[data-testid="column"]:nth-of-type(1) .stButton>button:hover {
+    
+    .stButton button:has(div:contains("Clasificar")):hover {
         background-color: #ff3333 !important;
         box-shadow: 0 4px 12px rgba(255, 75, 75, 0.4);
     }
 
-    /* BOTÓN DERECHO: GRIS OPACO (Borrar/Limpiar) */
-    div[data-testid="column"]:nth-of-type(2) .stButton>button {
+    /* BUSCAR BOTÓN POR TEXTO: Borrar o la papelera */
+    .stButton button:has(div:contains("Borrar")), 
+    .stButton button:has(div:contains("🗑️")) {
         background-color: #4a4a4a !important;
     }
-    div[data-testid="column"]:nth-of-type(2) .stButton>button:hover {
+
+    .stButton button:has(div:contains("Borrar")):hover,
+    .stButton button:has(div:contains("🗑️")):hover {
         background-color: #666666 !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
