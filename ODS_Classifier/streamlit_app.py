@@ -174,20 +174,40 @@ if predict_button:
 st.divider()
 
 # ==========================================
+# CONFIGURACIÓN DE RUTAS (Pon esto al inicio o aquí mismo)
+# ==========================================
+# Directorio donde vive este script (ODS_Classifier)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# Directorio raíz del proyecto (Microproyecto 2)
+root_dir = os.path.dirname(current_dir)
+
+# Construcción de rutas absolutas a los logos
+path_logo_uniandes = os.path.join(root_dir, "logo_uniandes.png")
+path_logo_maia = os.path.join(root_dir, "maia_logo.png")
+
+# ==========================================
 # FOOTER Y LOGOS
 # ==========================================
+st.write("---") # Una línea divisoria para el footer
 col_logo1, col_space, col_logo2 = st.columns([1, 2, 1])
 
 with col_logo1:
-    try:
-        st.image("../logo_uniandes.png", use_container_width=True)
-    except:
-        pass # Si falla cargando desde la raíz, ignora silenciosamente
+    if os.path.exists(path_logo_uniandes):
+        st.image(path_logo_uniandes, use_container_width=True)
+    else:
+        st.caption("📍 Logo Uniandes no encontrado")
 
 with col_logo2:
-    try:
-        st.image("../maia_logo.png", use_container_width=True)
-    except:
-        pass
+    if os.path.exists(path_logo_maia):
+        st.image(path_logo_maia, use_container_width=True)
+    else:
+        st.caption("📍 Logo MAIA no encontrado")
+
+st.markdown("""
+    <p style='text-align: center; color: gray; font-size: 0.9em;'>
+        Universidad de los Andes - MAIA - Autor: Jefferson Moreno<br>
+        Construido con Streamlit y Scikit-Learn
+    </p>
+    """, unsafe_allow_html=True)
 
 st.markdown("<p style='text-align: center; color: gray; font-size: 0.9em;'>Universidad de los Andes - MAIA - Autor: Jefferson Moreno<br>Construído con Streamlit y Scikit-Learn</p>", unsafe_allow_html=True)
