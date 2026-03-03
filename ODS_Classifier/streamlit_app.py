@@ -205,9 +205,7 @@ with col_logo2:
 
 st.markdown("""
     <p style='text-align: center; color: gray; font-size: 0.9em;'>
-        Universidad de los Andes - MAIA - Autor: Jefferson Moreno<br>
+        Universidad de los Andes - MAIA - MP 67 - Autor: Jefferson Moreno<br>
         Construido con Streamlit y Scikit-Learn
     </p>
     """, unsafe_allow_html=True)
-
-st.markdown("<p style='text-align: center; color: gray; font-size: 0.9em;'>Universidad de los Andes - MAIA - Autor: Jefferson Moreno<br>Construído con Streamlit y Scikit-Learn</p>", unsafe_allow_html=True)
