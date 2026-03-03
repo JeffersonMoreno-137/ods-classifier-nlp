@@ -68,6 +68,23 @@ st.markdown("""
         border-top: 1px solid #4A5E8C !important; /* Usamos el mismo azul acero */
         opacity: 0.6 !important;
     }
+
+    /* 6. ELIMINAR CABECERA BLANCA Y DECORACIÓN */
+    header[data-testid="stHeader"] {
+        background: rgba(0,0,0,0) !important; /* Cabecera transparente */
+        background-color: #1e2129 !important; /* O del mismo color del fondo */
+    }
+
+    /* Ocultar la línea roja decorativa de arriba de Streamlit */
+    [data-testid="stDecoration"] {
+        display: none !important;
+    }
+
+    /* Opcional: Hacer que el menú de hamburguesa y botones de GitHub sean claros para que no se pierdan */
+    button[kind="header"] {
+        color: #e0e0e0 !important;
+    }
+    
     </style>
     """, unsafe_allow_html=True)
 
