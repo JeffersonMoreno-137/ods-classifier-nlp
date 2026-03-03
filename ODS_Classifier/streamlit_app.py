@@ -193,13 +193,13 @@ col_logo1, col_space, col_logo2 = st.columns([1, 2, 1])
 
 with col_logo1:
     if os.path.exists(path_logo_uniandes):
-        st.image(path_logo_uniandes, use_container_width=True)
+        st.image(path_logo_uniandes, width='stretch') # Sintaxis nueva para 2026
     else:
         st.caption("📍 Logo Uniandes no encontrado")
 
 with col_logo2:
     if os.path.exists(path_logo_maia):
-        st.image(path_logo_maia, use_container_width=True)
+        st.image(path_logo_maia, width='stretch')
     else:
         st.caption("📍 Logo MAIA no encontrado")
 
