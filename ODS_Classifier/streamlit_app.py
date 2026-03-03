@@ -235,7 +235,7 @@ if 'texto_input' not in st.session_state:
     st.session_state.texto_input = ""
 
 def clear_text():
-    st.session_state.texto_input = ""
+    st.session_state["texto_input"] = ""
 
 user_input = st.text_area(
     "Escribe o pega aquí el documento, reporte o resumen que desees evaluar:", 
