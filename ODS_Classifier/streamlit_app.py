@@ -16,36 +16,60 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-    /* Fondo principal de la app */
+    /* 1. FONDO Y TEXTO GENERAL */
     .stApp {
         background-color: #1e2129;
         color: #e0e0e0;
     }
     
-    /* Fondo de la barra lateral (si usas) */
-    [data-testid="stSidebar"] {
-        background-color: #16191f;
+    /* 2. ETIQUETAS (LABELS) VISIBLES */
+    div[data-testid="stWidgetLabel"] p {
+        color: #B0C4DE !important; /* Azul acero claro */
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        margin-bottom: 10px !important;
     }
-    
-    /* Estilo para las cajas de texto y inputs */
-    .stTextArea textarea, .stTextInput input {
-        background-color: #2b303b !important;
+
+    /* 3. ÁREA DE TEXTO (INPUT) */
+    .stTextArea textarea {
+        background-color: #262730 !important;
         color: #ffffff !important;
-        border: 1px solid #3e4451 !important;
+        border: 1px solid #4A5E8C !important;
+        border-radius: 8px !important;
     }
-    
-    /* Estilo para el botón */
+    .stTextArea textarea::placeholder {
+        color: #6c757d !important;
+        opacity: 0.8;
+    }
+
+    /* 4. BOTONES DIFERENCIADOS */
+    /* Estilo común */
     .stButton>button {
-        background-color: #4a5e8c;
-        color: white;
-        border-radius: 5px;
+        border-radius: 8px;
         border: none;
-        transition: 0.3s;
+        padding: 0.5rem 1rem;
+        color: white !important;
+        transition: all 0.3s ease;
+        width: 100%;
+        font-weight: bold;
     }
-    
-    .stButton>button:hover {
-        background-color: #637ab0;
-        border: none;
+
+    /* BOTÓN IZQUIERDO: ROJO (Clasificar) */
+    div[data-testid="column"]:nth-of-type(1) .stButton>button {
+        background-color: #ff4b4b !important;
+    }
+    div[data-testid="column"]:nth-of-type(1) .stButton>button:hover {
+        background-color: #ff3333 !important;
+        box-shadow: 0 4px 12px rgba(255, 75, 75, 0.4);
+    }
+
+    /* BOTÓN DERECHO: GRIS OPACO (Borrar/Limpiar) */
+    div[data-testid="column"]:nth-of-type(2) .stButton>button {
+        background-color: #4a4a4a !important;
+    }
+    div[data-testid="column"]:nth-of-type(2) .stButton>button:hover {
+        background-color: #666666 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
     </style>
     """, unsafe_allow_html=True)
