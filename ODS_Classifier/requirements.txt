@@ -1,8 +1,8 @@
 streamlit
 joblib
 scikit-learn==1.6.1
-spacy==3.8.4
+spacy>=3.7.0,<3.8.0
 nltk
 pandas
-numpy<2.0.0
+numpy<2.1.0
 https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-3.7.0/es_core_news_sm-3.7.0-py3-none-any.whl
